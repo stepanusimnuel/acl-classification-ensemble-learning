@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import joblib
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
 
@@ -12,7 +13,7 @@ scaler_data = joblib.load('models/scaler_data.pkl')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    result = model_name = None
+    result = model_name = acc = None
     if request.method == 'POST':
         lr = float(request.form['lr'])
         x = float(request.form['x'])
@@ -43,6 +44,7 @@ def index():
                 X[col] = (X[col] - mean) / std if std != 0 else 0
 
         result = model.predict(X)
+        acc = round(np.max(model.predict_proba(X)[0]), 4) * 100
 
         if result == 0:
             result = 'healthy'
@@ -51,7 +53,7 @@ def index():
         else:
             result = 'completely ruptured'
 
-    return render_template('index.html', result=result, model_name=model_name)
+    return render_template('index.html', result=result, model_name=model_name, acc=acc)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

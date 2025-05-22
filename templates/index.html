@@ -12,17 +12,17 @@
       {% if result %}
       <div class="mt-5 mx-auto mb-5" style="max-width: 400px">
         <h3 class="text-center mb-3">Prediction Result:</h3>
-        <p>Model used: {{model_name}}</p>
-        <p>Result: {{result}}</p>
+        <p>Model used: {{model_name}} (Probabilitas: {{acc}})</p>
+        <p><strong>Result</strong>: {{result}}</p>
       </div>
       {% endif %}
       <form method="post" class="mx-auto fs-6">
         <div class="model-group mb-3">
           <input type="hidden" name="model" id="selected-model" value="knn" />
 
-          <button type="button" class="btn btn-outline-info active" data-value="knn">Stacked KNN</button>
-          <button type="button" class="btn btn-outline-info" data-value="rf">Random Forest</button>
-          <button type="button" class="btn btn-outline-info" data-value="svm">Stacked SVM</button>
+          <button type="button" class="btn btn-outline-info active" data-value="knn">Stacked KNN (87.54%)</button>
+          <button type="button" class="btn btn-outline-info" data-value="rf">Random Forest (86.43%)</button>
+          <button type="button" class="btn btn-outline-info" data-value="svm">Stacked SVM (72.17%)</button>
         </div>
 
         <div class="mb-3">
