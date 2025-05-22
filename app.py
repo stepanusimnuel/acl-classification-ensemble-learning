@@ -25,13 +25,13 @@ def index():
 
         if model == "rf":
             model = rf_model
-            model_name = "Random Forest (Akurasi: 86.43%)"
+            model_name = "Random Forest"
         elif model == "knn":
             model = knn_model
-            model_name = "Stacking KNN (Akurasi: 87.54%)"
+            model_name = "Stacking KNN"
         elif model == "svm":
             model = svm_model
-            model_name = "Stacking SVM (Akurasi: 72.17%)"
+            model_name = "Stacking SVM"
 
         feature_names = ['kneeLR', 'roiX', 'roiY', 'roiZ', 'roiHeight', 'roiWidth', 'roiDepth']
         X = pd.DataFrame([[lr, x, y, z, height, width, depth]], columns=feature_names)
