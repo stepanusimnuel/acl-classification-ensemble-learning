@@ -11,6 +11,7 @@ Flask-Login==0.6.3
 Flask-SQLAlchemy==3.1.1
 fonttools @ file:///C:/b/abs_4crkswws2h/croot/fonttools_1737040078745/work
 greenlet==3.2.2
+gunicorn==23.0.0
 itsdangerous==2.2.0
 Jinja2==3.1.6
 joblib @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/joblib_1729044354027/work
