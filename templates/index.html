@@ -18,16 +18,19 @@
       {% endif %}
       <form method="post" class="mx-auto fs-6">
         <div class="model-group mb-3">
-          <input type="hidden" name="model" id="selected-model" value="knn" />
+          <input type="hidden" name="model" id="selected-model" value="rf" />
 
-          <button type="button" class="btn btn-outline-info active" data-value="knn">Stacked KNN (87.54%)</button>
-          <button type="button" class="btn btn-outline-info" data-value="rf">Random Forest (86.43%)</button>
-          <button type="button" class="btn btn-outline-info" data-value="svm">Stacked SVM (72.17%)</button>
+          <button type="button" class="btn btn-outline-info active" data-value="rf">Random Forest (88.21%)</button>
+          <button type="button" class="btn btn-outline-info" data-value="knn">Stacked KNN (87.90%)</button>
+          <button type="button" class="btn btn-outline-info" data-value="svm">Stacked SVM (80.58%)</button>
         </div>
 
         <div class="mb-3">
-          <label for="lr" class="form-label">Knee Left/Right (1/0)</label>
-          <input type="text" class="form-control" id="lr" name="lr" required placeholder="Enter 1 for Left, 0 for Right" autocomplete="off" />
+          <label for="lr">Foot</label>
+          <select class="form-select" id="lr" name="lr">
+            <option value="1" selected>Left</option>
+            <option value="0">Right</option>
+          </select>
         </div>
 
         <div class="mb-3">

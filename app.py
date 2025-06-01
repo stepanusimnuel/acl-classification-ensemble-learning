@@ -16,6 +16,7 @@ def index():
     result = model_name = acc = None
     if request.method == 'POST':
         lr = float(request.form['lr'])
+        print(lr)
         x = float(request.form['x'])
         y = float(request.form['y'])
         z = float(request.form['z'])
